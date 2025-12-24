@@ -27,7 +27,7 @@ public class WordleDictionaryLoader {
             while (br.ready()) {
                 words.add(br.readLine());
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             logFile.println(e.getMessage());
         }
         return this.words;
