@@ -19,24 +19,24 @@ public class WordleDictionary {
         return words;
     }
 
-    public static String generateRandomWord(List<String> list){
+    public static String generateRandomWord(List<String> list) {
         Random random = new Random();
         return list.get(random.nextInt(list.size()));
     }
 
-    public static String testLettersInWord(String answer, String userWord){
+    public static String testLettersInWord(String answer, String userWord) {
         StringBuilder result = new StringBuilder();
 
-        for (int i = 0;i < answer.length();i++){
+        for (int i = 0;i < answer.length();i++) {
 
             String userLetter = userWord.substring(i, i + 1);
             String answerLetter = answer.substring(i, i + 1);
 
-            if (answerLetter.equals(userLetter)){
+            if (answerLetter.equals(userLetter)) {
                 result.append("+");
-            }else if (answer.contains(userLetter)){
+            } else if (answer.contains(userLetter)) {
                 result.append("^");
-            }else{
+            } else {
                 result.append("-");
             }
         }
@@ -53,11 +53,11 @@ public class WordleDictionary {
         List<String> containsLetters = new ArrayList<>();
 
         for (String key : map.keySet()) {
-            for (int i = 0;i < key.length();i++){
+            for (int i = 0;i < key.length();i++) {
                 if (map.get(key).charAt(i) == '+') {
                     trueID.add(i);
                     containsLetters.add(key.substring(i, i + 1));
-                }else if (map.get(key).charAt(i) == '^') {
+                } else if (map.get(key).charAt(i) == '^') {
                     containsLetters.add(key.substring(i, i + 1));
                 }
             }
@@ -65,8 +65,8 @@ public class WordleDictionary {
 
         for (String word : words) {
             if (word.length() == answer.length()) {
-                if (testWordAllowed(trueID, containsLetters, word, answer)){
-                    if (!map.containsKey(word)){
+                if (testWordAllowed(trueID, containsLetters, word, answer)) {
+                    if (!map.containsKey(word)) {
                         allowedWords.add(word);
                     }
                 }
