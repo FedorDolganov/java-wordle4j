@@ -90,7 +90,7 @@ public class WordleGame {
                     logFile.println(String.format("Слово %s не соответствует длинне загаданного слова", userWord));
                     System.out.println("Слово не соответствует длинне загаданного слова");
                 }
-            } else{
+            } else {
                 throw new WordNotFoundInDictionary("Cлово %s отсутствует в словаре");
             }
         } else {
