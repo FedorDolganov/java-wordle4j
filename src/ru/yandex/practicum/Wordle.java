@@ -29,22 +29,22 @@ public class Wordle {
         }
     }
 
-    private static void startGame(WordleGame wordleGame, PrintWriter logFile){
+    private static void startGame(WordleGame wordleGame, PrintWriter logFile) {
         System.out.println("Игра Wordle началась!");
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(String.format("Введите слово состоящее из %s символов", wordleGame.getAnswerLength()));
 
-        while (true){
+        while (true) {
             try {
-                if (wordleGame.wordProcessing(scanner.nextLine())){
+                if (wordleGame.wordProcessing(scanner.nextLine())) {
                     break;
                 }
-            }catch (WordNotFoundInDictionary e) {
+            } catch (WordNotFoundInDictionary e) {
                 logFile.println(e.getMessage());
                 System.out.println("Введенное слово отсутствует словаре");
-            }catch (Exception e) {
+            } catch (Exception e) {
                 logFile.println(e.getMessage());
             }
         }
