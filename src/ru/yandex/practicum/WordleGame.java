@@ -42,7 +42,7 @@ public class WordleGame {
                     logFile.println(String.format("Победа слово введено верно %s", answer));
 
                     return true;
-                }else {
+                } else {
                     usedWords.put(tip, testedWord);
 
                     steps--;
@@ -59,13 +59,13 @@ public class WordleGame {
 
                     return true;
                 }
-            }else if (userWord.equals(answer)) {
+            } else if (userWord.equals(answer)) {
                 System.out.println("Победа! Вы отгадали слово!");
 
                 logFile.println(String.format("Победа слово введено верно %s", answer));
 
                 return true;
-            }else if (dictionary.getWords().contains(userWord)) {
+            } else if (dictionary.getWords().contains(userWord)) {
                 if (userWord.length() == getAnswerLength()) {
                     String testedWord = WordleDictionary.testLettersInWord(answer, userWord);
 
@@ -86,14 +86,14 @@ public class WordleGame {
 
                         return true;
                     }
-                }else {
+                } else {
                     logFile.println(String.format("Слово %s не соответствует длинне загаданного слова", userWord));
                     System.out.println("Слово не соответствует длинне загаданного слова");
                 }
-            }else{
+            } else{
                 throw new WordNotFoundInDictionary("Cлово %s отсутствует в словаре");
             }
-        }else {
+        } else {
             System.out.println(String.format("Проигрыш! Попытки кончились, загаданноое слово %s", answer));
 
             logFile.println(String.format("Поражение! Загаданное слово %s", answer));
@@ -116,7 +116,7 @@ public class WordleGame {
         return dictionary;
     }
 
-    public int getAnswerLength(){
+    public int getAnswerLength() {
         return answer.length();
     }
 
