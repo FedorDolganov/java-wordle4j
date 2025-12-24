@@ -44,7 +44,7 @@ public class WordleDictionary {
         return result.toString();
     }
 
-    public String getTip(LinkedHashMap<String, String> map, String answer){
+    public String getTip(LinkedHashMap<String, String> map, String answer) {
 
         List<String> allowedWords = new ArrayList<>();
 
@@ -84,7 +84,7 @@ public class WordleDictionary {
             }
         }
 
-        for (int trID : trueID){
+        for (int trID : trueID) {
             if (!word.substring(trID, trID + 1).equals(answer.substring(trID, trID + 1))) {
                 return false;
             }
