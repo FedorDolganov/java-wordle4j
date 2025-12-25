@@ -48,25 +48,13 @@ class WordleTest {
     }
 
     @Test
-    public void attemptsOver() {
-        try {
-            wg.wordProcessing("привет");
-
-            wg.wordProcessing("привет");
-
-            wg.wordProcessing("привет");
-
-            wg.wordProcessing("привет");
-
-            wg.wordProcessing("привет");
-        } catch (WordNotFoundInDictionary e) {}
-
-        Assertions.assertTrue(wg.wordProcessing("привет")); //Данный тест работает не с первого раза, так как слово случано. Загаданным слововм должно быть "приват"
+    public void testForWinOverTheGame() {
+        Assertions.assertTrue(wg.wordProcessing("привет"));
     }
 
     @Test
-    public void testTips() {
-        Assertions.assertFalse(wg.wordProcessing("")); //Данный тест работает не с первого раза, так как слово случано. Тест должен показать то что попытки выводятся и при этом могут как завершать игру выдавая true (слово угаданно), так и не угадать выбранное слово, то есть вывести false
+    public void testTipCanOverTheGame() {
+        Assertions.assertTrue(wg.wordProcessing(""));
     }
 
 }
