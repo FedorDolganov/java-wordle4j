@@ -1,5 +1,7 @@
 package ru.yandex.practicum;
 
+import ru.yandex.practicum.Exceptions.WordNotFoundInDictionary;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -31,6 +33,9 @@ public class Wordle {
 
     private static void startGame(WordleGame wordleGame, PrintWriter logFile) {
         System.out.println("Игра Wordle началась!");
+
+
+        System.out.println("Угадайте слово из пяти букв, у вас шесть попыток \nВведите слово и нажмите enter, чтобы попробовать угадать слово\nИли просто нажмите enter для получения подсказки");
 
         Scanner scanner = new Scanner(System.in);
 

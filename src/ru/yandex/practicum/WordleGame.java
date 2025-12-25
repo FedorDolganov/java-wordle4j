@@ -1,5 +1,7 @@
 package ru.yandex.practicum;
 
+import ru.yandex.practicum.Exceptions.WordNotFoundInDictionary;
+
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
 
